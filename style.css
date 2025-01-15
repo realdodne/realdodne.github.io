@@ -1,0 +1,53 @@
+.wrap {
+  position: absolute;
+  left: 8rem;
+  top: -3.3rem;
+  bottom: 50px;
+  width: 30px;
+  height: 49px;
+  margin-left: -144px;
+  text-align: left;
+  overflow: hidden;
+  font-size: 12px;
+  font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+  line-height: 1.5;
+}
+
+.wrap * {
+  padding: 0;
+  margin: 0;
+  background-color: red;
+}
+
+.wrap .info {
+  width: 30px;
+  height: 37px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+  border: 0;
+}
+
+.info .info-content {
+  text-align: center;
+  height: 37px;
+  background: #62d6f0;
+  border-bottom: 1px solid #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.info .close:hover {
+  cursor: pointer;
+}
+
+.info:after {
+  content: '';
+  position: absolute;
+  margin-left: -12px;
+  left: 50%;
+  bottom: 0;
+  width: 22px;
+  height: 12px;
+  background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png');
+}
