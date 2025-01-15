@@ -44,9 +44,9 @@
       // 주소-좌표 변환 객체를 생성합니다
       var geocoder = new kakao.maps.services.Geocoder();
       // 주소로 좌표를 검색합니다
-      async function myfoo() {
+      function myfoo() {
         for (let i = 0; i < rows.length; i++) {
-          await geocoder.addressSearch(rows[i].주소, function (result, status) {
+          geocoder.addressSearch(rows[i].주소, function (result, status) {
             // 정상적으로 검색이 완료됐으면
             if (status === kakao.maps.services.Status.OK) {
               var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
@@ -98,17 +98,18 @@
 
               // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
               https: map.setCenter(coords);
-            } else if (status !== kakao.maps.services.Status.OK) {
-              document
-                .querySelector('.check')
-                .insertAdjacentHTML(
-                  'beforeend',
-                  `<div>${i + 1}번 : <span style ="color : red">${
-                    rows[i].주소
-                  }</span>  가 정확하지 않습니다.</span>`
-                );
-              console.log(i + 1 + '번 : ' + rows[i].주소 + ' 정확하지 않아요.');
             }
+            // else if (status !== kakao.maps.services.Status.OK) {
+            //   document
+            //     .querySelector('.check')
+            //     .insertAdjacentHTML(
+            //       'beforeend',
+            //       `<div>${i + 1}번 : <span style ="color : red">${
+            //         rows[i].주소
+            //       }</span>  가 정확하지 않습니다.</span>`
+            //     );
+            //   console.log(i + 1 + '번 : ' + rows[i].주소 + ' 정확하지 않아요.');
+            // }
           });
         }
       }
